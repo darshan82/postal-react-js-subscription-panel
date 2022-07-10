@@ -23,7 +23,7 @@ const Nav = (props) => {
     }
   }
   return (
-    <nav className={`w-full px-2 md:px-8 lg:px-48 flex items-center justify-between py-2 fixed top-0 left-0 ${props?.scrollY > 15 ? 'bg-white' : 'bg-transparent'} transition-bg duration-500`}>
+    <nav className={`w-full z-50 px-2 md:px-8 lg:px-48 flex items-center justify-between py-2 fixed top-0 left-0 ${props?.scrollY > 15 ? 'bg-white' : 'bg-transparent'} transition-bg duration-500`}>
         <div className='flex gap-2 items-center'>
           <h1 className={`text-2xl font-bold ${props?.scrollY > 15 ? 'text-[#00CCBB]' : 'text-white'}`}>Deliveroo</h1>
           <span className='text-2xl'><GoPlay /></span>
@@ -38,7 +38,7 @@ const Nav = (props) => {
               </button>
               <ul className={`${getStartedOpen ? 'visible' : 'hidden'} absolute top-[65px] bg-gray-100 rounded`}>
                 {GET_STARTED?.map(val => {
-                  return <li className='border-b-[1px] px-6 py-4 cursor-pointer hover:bg-white rounded'><button>{val}</button></li>
+                  return <li className='border-b-[1px] px-6 py-4 cursor-pointer hover:bg-white hover:text-yellow-500 rounded'><button>{val}</button></li>
                 })}
               </ul>
             </li>
@@ -51,7 +51,7 @@ const Nav = (props) => {
               </button>
               <ul className={`${servicesOpen ? 'visible' : 'hidden'} absolute top-[65px] bg-gray-100 rounded`}>
                 {SERVICES?.map(val => {
-                  return <li className='border-b-[1px] px-6 py-4 cursor-pointer hover:bg-white rounded'><button>{val}</button></li>
+                  return <li className='border-b-[1px] px-6 py-4 cursor-pointer hover:bg-white hover:text-yellow-500 rounded'><button>{val}</button></li>
                 })}
               </ul>
             </li>

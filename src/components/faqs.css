@@ -1,0 +1,5 @@
+details[open] summary ~ * {
+    animation: open .5s ease-in-out;
+  }
+
+

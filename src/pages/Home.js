@@ -4,6 +4,9 @@ import promote from '../assets/images/promote.avif'
 import reachCustomers from '../assets/images/reachCustomers.avif'
 import support from '../assets/images/support.avif'
 import delivery from '../assets/images/delivery.avif'
+import packaging from '../assets/images/packaging.avif'
+import technology from '../assets/images/technology.avif'
+import deliverySupport from '../assets/images/deliverySupport.avif'
 import phone from '../assets/images/phone.avif'
 import tortilla from '../assets/images/tortilla.svg'
 import blackbanner from "../assets/images/blackbanner.svg";
@@ -13,12 +16,22 @@ import map from "../assets/icons/map.svg";
 import lightning from "../assets/icons/lightning.svg";
 import BusinessCard from "../components/businessCard";
 import SignupBar from "../components/signupBar";
+import SupportCard from "../components/supportCard";
+import Faqs from "../components/faqs";
 
 const STATS = [
   { img: map, count: 148000, caption: "Restaurant partners globally" },
   { img: food, count: 74800000, caption: "Meals delivered globally" },
   { img: lightning, count: 20, caption: "Average meal delivery time" },
 ];
+const FAQS = [
+  {question: 'Do I need an FSA rating to join Deliveroo?', 
+  answer: "Yes, we need you to provide proof that your restaurant has a minimum standard of food hygiene. We reserve the right to put your application on hold until you can obtain proof of your food hygiene standards. How to find your restaurant's FSA rating."}, 
+  {question: 'Can I upload my own menu images?', 
+  answer: "We recommend using as many high quality images as possible on your Deliveroo menu. That's why we offer a professional photography service as part of some of our packages. You can also upload your own imagery for your menu and restaurant 'shopfront' on Deliveroo. All images are reviewed against our photography guidelines. Find out more about uploading your imagery."}, 
+  {question: 'Can I use my own delivery riders?', 
+  answer: "You can choose to use Deliveroo's world-class logistics network or your own delivery drivers. We extensively train our riders, who can be tracked in real time when they're carrying your orders. Your customers can also see and interact with our riders, meaning fewer undelivered orders and more happy customers."}
+]
 const Home = () => {
   const [scrollY, setScrollY] = useState(0);
   function logit() {
@@ -188,10 +201,54 @@ const Home = () => {
         </div>
       </section>
       
-      <div className="my-8">
+      <div className="my-10">
         <SignupBar title='Not a Deliveroo parneter yet?' btnText="Create account"/>
       </div>
-      <p>hello world</p>
+
+      <section className="px-2 md:px-8 lg:px-48 text-start lg:text-center my-16 flex flex-col">
+        <h4 className="text-4xl font-bold">Grow and support your business</h4>
+        <p className="mt-4">Products, services and information for your success</p>
+        <div className="flex justify-between mt-12 flex-wrap gap-4">
+          <SupportCard img={packaging} title="Packaging" description="Custom branded packaging for every cuisine type, with free next day delivery."/>
+          <SupportCard img={technology} title="Technology" description="Making operations easier with our world class tech and API integration."/>
+          <SupportCard img={deliverySupport} title="Delivery" description="Give your customers the best possible experience and create long-term growth by offering delivery."/>
+        </div>
+      </section>
+
+      <section>
+        <Faqs data={FAQS}/>
+      </section>
+
+      <footer className="px-2 md:px-8 lg:px-48 py-16">
+        <div className="flex flex-row items-start justify-between gap-8 py-4 border-b overflow-x-scroll">
+          <div className="flex flex-col gap-2 ">
+            <strong className="mb-2">Postal Restaurants</strong>
+            <span className="text-[#828585] hover:text-yellow-400 cursor-pointer">Editions</span>
+            <span className="text-[#828585] hover:text-yellow-400 cursor-pointer">Marketing</span>
+          </div>
+          <di className="flex flex-col gap-2 ">
+            <strong className="mb-2">Legal</strong>
+            <span className="text-[#828585] hover:text-yellow-400 cursor-pointer">Privacy</span>
+            <span className="text-[#828585] hover:text-yellow-400 cursor-pointer">Policies</span>
+            <span className="text-[#828585] hover:text-yellow-400 cursor-pointer">Cookies</span>
+            <span className="text-[#828585] hover:text-yellow-400 cursor-pointer">Terms and conditions</span>
+          </di>
+          <div className="flex flex-col gap-2 ">
+            <strong className="mb-2">Help</strong>
+            <span className="text-[#828585] hover:text-yellow-400 cursor-pointer">Help Center</span>
+            <span className="text-[#828585] hover:text-yellow-400 cursor-pointer">Covid-19</span>
+            <span className="text-[#828585] hover:text-yellow-400 cursor-pointer">Contact Us</span>
+          </div>
+          <div className="hidden lg:flex flex-col gap-2">
+            <strong className="mb-2">Want your business on Deliveroo?</strong>
+            <span className="text-[#828585] hover:text-yellow-400 cursor-pointer">Send us your information and we’ll reach out to help you become a<br /> Deliveroo partner.</span>
+            <button className='w-1/2 mt-2 bg-yellow-300 rounded px-5 py-2 border-yellow-300 border-solid border-2 text-lg text-black font-semibold cursor-pointer'>Become a partner</button>
+          </div>
+        </div>
+        <div className="mt-2">
+          <p className="text-[#828585]">© 2022 Deliveroo</p>
+        </div>
+      </footer>
     </>
   );
 };

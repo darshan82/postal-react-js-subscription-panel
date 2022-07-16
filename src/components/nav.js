@@ -1,12 +1,30 @@
-import React, {useState} from 'react'
-import {GoChevronDown, GoChevronUp, GoGrabber, GoPlay} from 'react-icons/go'
+import React, {useEffect, useState} from 'react'
+import {GoChevronDown, GoChevronUp, GoGrabber, GoPlay, GoX} from 'react-icons/go'
 
 const GET_STARTED = ['Delivery', 'Pickup', 'Restaurant']
 const SERVICES = ['Marketing', 'Technology']
 const Nav = (props) => {
   const [getStartedOpen, setGetStartedOpen] = useState(false)
   const [servicesOpen, setServicesOpen] = useState(false)
-  console.log('getStartedOpen: ', getStartedOpen)
+  const [navOpen, setNavOpen] = useState(false)
+  const [windowSize, setWindowSize] = useState(getWindowSize())
+
+  useEffect(() => {
+    function handleWindowResize(){
+      setWindowSize(getWindowSize())
+    }
+    window.addEventListener('resize', handleWindowResize)
+    if(windowSize?.innerWidth > 767){
+      setNavOpen(false)
+    }
+    return () => window.removeEventListener('resize', handleWindowResize)
+  }, [windowSize])
+
+  function getWindowSize(){
+    const {innerWidth, innerHeight} = window
+    return {innerWidth, innerHeight}
+  }
+
 
   const handleDropdown = e => {
     // alert(e.target.name)
@@ -22,21 +40,32 @@ const Nav = (props) => {
       default:
     }
   }
+
+  const toggleNav = () => setNavOpen(!navOpen)
+
+  if(navOpen){
+    document.body.style.overflow = 'hidden'
+  }else{
+    document.body.style.overflow = 'auto'
+  }
+
   return (
-    <nav className={`w-full z-50 px-2 md:px-8 lg:px-48 flex items-center justify-between py-4 fixed top-0 left-0 ${props?.scrollY > 15 ? 'bg-white' : 'bg-transparent'} transition-bg duration-500`}>
-        <div className='flex gap-2 items-center'>
-          <h1 className={`text-2xl font-bold ${props?.scrollY > 15 ? 'text-[#00CCBB]' : 'text-white'}`}>Deliveroo</h1>
-          <span className='text-2xl'><GoPlay /></span>
+    <nav className={`w-full z-50 px-2 md:px-8 lg:px-48 flex flex-col gap-4 md:flex-row items-center justify-start py-4 fixed top-0 left-0 ${navOpen && 'h-full px-0'} ${props?.scrollY > 15 ? 'bg-white' : navOpen ? 'bg-white':'bg-transparent'} transition-bg duration-500`}>
+        <div className={`flex justify-between w-full md:w-[20%] ${navOpen && 'px-2'}`}>
+          <div className='flex gap-2 items-center'>
+            <h1 className={`text-2xl font-bold ${props?.scrollY > 15 ? 'text-[#00CCBB]' : navOpen ? 'text-black':'text-white'}`}>Deliveroo</h1>
+            <span className='text-2xl'><GoPlay /></span>
+          </div>
+          <div className={`md:hidden text-4xl ${navOpen ? 'text-red-400' : 'text-yellow-300'} transition duration-500 ease-in`} onClick={toggleNav}>{navOpen ? <GoX /> : <GoGrabber />}</div>
         </div>
-        <span className='md:hidden text-4xl'><GoGrabber /></span>
-        <ul className='md:flex hidden items-center gap-x-4'>
+        <ul className={`${navOpen ? 'w-full text-center' : 'hidden'} transition duration-500 ease md:w-[75%] md:flex md:justify-end md:items-center md:gap-x-4`}>
             <li>
               <button name='getStarted'
                 onClick={handleDropdown}
-                className={`bg-transparent flex font-medium items-end gap-1 ${props?.scrollY > 15 ? 'text-black' : 'text-white'} hover:text-yellow-300 ${getStartedOpen ? 'text-yellow-400':'text-white'} cursor-pointer`}>
+                className={`md:bg-transparent w-full bg-yellow-400 py-4 flex font-medium items-end justify-center gap-1 ${props?.scrollY > 15 ? navOpen ? 'text-white text-xl' : 'text-black text-lg' : 'text-white text-lg'} hover:text-yellow-300 ${getStartedOpen ? navOpen ? 'text-white' : 'text-yellow-400':'text-white'} cursor-pointer`}>
               Get Started {getStartedOpen ? <GoChevronUp style={{color: 'yellow', }} /> : <GoChevronDown style={{color: 'yellow', }} /> }
               </button>
-              <ul className={`${getStartedOpen ? 'visible' : 'hidden'} absolute top-[65px] bg-gray-100 rounded`}>
+              <ul className={`${getStartedOpen ? 'visible' : 'hidden'} md:absolute md:top-[65px] bg-gray-100 md:rounded transition-visible ease-in duration-300`}>
                 {GET_STARTED?.map(val => {
                   return <li className='border-b-[1px] px-6 py-4 cursor-pointer hover:bg-white hover:text-yellow-500 rounded'><button>{val}</button></li>
                 })}
@@ -46,17 +75,17 @@ const Nav = (props) => {
               <button  
                 name='services'
                 onClick={handleDropdown}
-                className={`bg-transparent flex font-medium items-end gap-1 ${props?.scrollY > 15 ? 'text-black' : 'text-white'} hover:text-yellow-300 ${servicesOpen ? 'text-yellow-400':'text-white'} cursor-pointer`}>
+                className={`md:bg-transparent w-full bg-[#450163] py-4 flex font-medium items-end justify-center gap-1  ${props?.scrollY > 15 ? navOpen ? 'text-white text-xl' : 'text-black text-lg' : 'text-white text-lg'} text-lg hover:text-yellow-300 ${servicesOpen ? navOpen ? 'text-white' : 'text-yellow-400':'text-white'} cursor-pointer`}>
                 Services {servicesOpen ? <GoChevronUp style={{color: 'yellow', }} /> : <GoChevronDown style={{color: 'yellow', }} /> }
               </button>
-              <ul className={`${servicesOpen ? 'visible' : 'hidden'} absolute top-[65px] bg-gray-100 rounded`}>
+              <ul className={`${servicesOpen ? 'visible' : 'hidden'} md:absolute md:top-[65px] bg-gray-100 md:rounded`}>
                 {SERVICES?.map(val => {
                   return <li className='border-b-[1px] px-6 py-4 cursor-pointer hover:bg-white hover:text-yellow-500 rounded'><button>{val}</button></li>
                 })}
               </ul>
             </li>
-            {/* <li className={`rounded ${props?.scrollY > 15 ? null : 'bg-white'}  border-solid border-gray border-2 px-5 py-2 text-lg text-yellow-400 font-semibold cursor-pointer`}>Log in</li>
-            <li className='bg-yellow-300 rounded px-5 py-2 border-yellow-300 border-solid border-2 text-lg text-black font-semibold text-bold cursor-pointer'>Become a partner</li> */}
+            <li className={`md:rounded ${navOpen ? 'bg-[#8d0062] py-3 text-xl text-white' :'bg-white py-2 border-solid border-gray border-2 text-lg' }  px-5 font-semibold cursor-pointer`}>Log in</li>
+            <li className={`bg-yellow-300 md:rounded px-5 ${navOpen ? 'py-3 text-xl text-white' : 'py-2 border-yellow-300 border-solid border-2 text-lg'} font-semibold cursor-pointer`}>Become a partner</li>
         </ul>
     </nav>
   )

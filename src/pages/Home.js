@@ -62,13 +62,13 @@ const Home = () => {
         } else {
           setPartners((old) => old + 1000);
         }
-      }, 10);
+      }, 1);
   
       mealsInterval = setInterval(() => {
-        if(meals === 74800000){
+        if(meals > 74800000){
           clearInterval(mealsInterval)
         }else{
-          setMeals(old => old+100000)
+          setMeals(old => old+200000)
         }
       }, 1)
   
@@ -78,7 +78,7 @@ const Home = () => {
         }else{
           setAverageTime(old => old+1)
         }
-      }, 100)
+      }, 10)
     }
 
     return () => {
@@ -98,18 +98,18 @@ const Home = () => {
   return (
     <>
       <section
-        className="bg-local bg-center bg-no-repeat bg-cover h-screen shadow-[inset_0px_50px_50px_0px_rgba(0,0,0,0.6),inset_0px_-200px_300px_0px_rgba(0,0,0,0.9)]"
+        className="bg-local bg-center bg-no-repeat bg-cover h-80 md:h-screen md:shadow-[inset_0px_50px_50px_0px_rgba(0,0,0,0.6),inset_0px_-200px_300px_0px_rgba(0,0,0,0.9)]"
         style={{ backgroundImage: `url(${background})` }}
       >
-        <div className="relative top-[480px] w-[100%] text-center inline-block flex flex-wrap flex-col justify-center items-center gap-4 lg:gap-6 xl:gap-8">
-          <h1 className="text-white text-6xl font-bold">
+        <div className="relative top-[350px] md:top-[280px] lg:top-[480px] w-[100%] text-center flex flex-wrap flex-col justify-center items-center gap-4 lg:gap-6 xl:gap-8">
+          <h1 className="text-black md:text-white text-4xl md:text-6xl font-bold">
             Become a Deliveroo{" "}
             <span className="text-yellow-300">restaurant</span> partner
           </h1>
-          <p className="text-white text-xl">
+          <p className="text-gray-600 lg:text-white text-xl">
             Together we can keep your kitchen busier than ever
           </p>
-          <button className="text-black text-xl font-semibold bg-yellow-300 rounded py-[12px] px-[24px] min-w-[300px]">
+          <button className="text-black text-xl font-semibold bg-yellow-300 rounded py-[12px] px-[24px] min-w-[100px] md:min-w-[200px] lg:min-w-[300px]">
             Get started
           </button>
         </div>
@@ -118,8 +118,8 @@ const Home = () => {
       <Nav scrollY={scrollY} />
 
       <section className="">
-        <img src={blackbanner} alt="banner" className="z-0" />
-        <div className="relative w-full top-[-200px] mb-[-200px] px-2 md:px-8 lg:px-48 z-10">
+        <img src={blackbanner} alt="banner" className="z-0 invisible lg:visible" />
+        <div className="relative w-full top-[200px] md:top-[-180px] md:mb-[-180px] lg:top-[-200px] lg:mb-[-200px] px-2 md:px-8 lg:px-48 z-10">
           <div className="flex flex-col gap-6 bg-white shadow-lg rounded-md justify-center items-center py-16">
             <h4 className="text-2xl font-bold">We're here to deliver</h4>
             <div className="w-full flex flex-wrap justify-evenly">
@@ -165,7 +165,7 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="px-2 md:px-8 lg:px-48 text-center mt-8">
+      <section className="px-2 md:px-8 lg:px-48 text-center mt-80 md:mt-40 lg:mt-8">
         <h2 className="text-4xl font-bold">How we can help your business</h2>
         <div className="w-full mt-8 flex flex-wrap justify-between items-center gap-2">
           <BusinessCard

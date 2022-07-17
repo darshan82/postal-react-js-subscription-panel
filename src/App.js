@@ -2,8 +2,8 @@ import './App.css';
 import Home from './pages/Home';
 import Delivery from './pages/Delivery'
 import Pickup from './pages/Pickup'
-import Marketing from './pages/Marketing'
-import Technology from './pages/Technology'
+import Marketing from './pages/marketing'
+import Technology from './pages/technology'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {

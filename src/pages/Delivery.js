@@ -1,4 +1,5 @@
+import Nav from "../components/nav"
 const Delivery = () => {
-    return <h1>Delivery page</h1>
+    return <Nav />
 }
 export default Delivery

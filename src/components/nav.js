@@ -1,26 +1,22 @@
-import React, {useEffect, useState} from 'react'
+import React, {useEffect, useState, useContext} from 'react'
 import {GoChevronDown, GoChevronUp, GoGrabber, GoPlay, GoX} from 'react-icons/go'
 import { useNavigate } from "react-router-dom";
+import { WindowSizeContext } from '../App';
 
 const GET_STARTED = ['Delivery', 'Pickup', 'Restaurant']
 const SERVICES = ['Marketing', 'Technology']
 const Nav = (props) => {
   const navigate = useNavigate()
+  const windowSize = useContext(WindowSizeContext)
 
   const [getStartedOpen, setGetStartedOpen] = useState(false)
   const [servicesOpen, setServicesOpen] = useState(false)
   const [navOpen, setNavOpen] = useState(false)
-  const [windowSize, setWindowSize] = useState(getWindowSize())
 
   useEffect(() => {
-    function handleWindowResize(){
-      setWindowSize(getWindowSize())
-    }
-    window.addEventListener('resize', handleWindowResize)
     if(windowSize?.innerWidth > 767){
       setNavOpen(false)
     }
-    return () => window.removeEventListener('resize', handleWindowResize)
   }, [windowSize])
 
   function getWindowSize(){
@@ -53,7 +49,7 @@ const Nav = (props) => {
   }
 
   return (
-    <nav className={`w-full z-50 px-2 md:px-8 lg:px-48 flex flex-col gap-4 md:flex-row items-center justify-start py-4 fixed top-0 left-0 ${navOpen && 'h-full px-0'} ${props?.scrollY > 15 ? 'bg-white' : navOpen ? 'bg-white':'bg-transparent'} transition-bg duration-500`}>
+    <nav className={`w-full z-50 px-2 md:px-8 lg:px-48 flex flex-col gap-4 md:flex-row items-center justify-start py-4 fixed top-0 left-0 ${navOpen && 'h-full px-0'} ${props?.scrollY > 15 ? 'bg-white' : navOpen ? 'bg-white': props?.page === 'home' ? 'bg-transparent' : 'bg-white'} transition-bg duration-500`}>
         <div className={`flex justify-between w-full md:w-[20%] ${navOpen && 'px-2'}`}>
           <div className='flex gap-2 items-center'>
             <h1 className={`text-2xl font-bold ${props?.scrollY > 15 ? 'text-[#00CCBB]' : navOpen ? 'text-black': props?.page === 'home' ?'text-white':'text-black'}`}>Deliveroo</h1>

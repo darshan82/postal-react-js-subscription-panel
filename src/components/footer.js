@@ -1,13 +1,15 @@
+import { useNavigate } from "react-router-dom"
 export default function Footer(){
+    const navigate = useNavigate()
     return (
         <footer className="px-2 md:px-8 lg:px-48 py-16">
         <div className="flex flex-row items-start justify-between gap-8 py-4 border-b overflow-x-scroll">
           <div className="flex flex-col gap-2 ">
             <strong className="mb-2">Postal Restaurants</strong>
-            <span className="text-[#828585] hover:text-yellow-400 cursor-pointer">
+            <span className="text-[#828585] hover:text-yellow-400 cursor-pointer" onClick={() => navigate('/editions')}>
               Editions
             </span>
-            <span className="text-[#828585] hover:text-yellow-400 cursor-pointer">
+            <span className="text-[#828585] hover:text-yellow-400 cursor-pointer" onClick={() => navigate('/marketing')}>
               Marketing
             </span>
           </div>

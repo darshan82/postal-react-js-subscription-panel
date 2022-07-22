@@ -19,11 +19,6 @@ const Nav = (props) => {
     }
   }, [windowSize])
 
-  function getWindowSize(){
-    const {innerWidth, innerHeight} = window
-    return {innerWidth, innerHeight}
-  }
-
 
   const handleDropdown = e => {
     // alert(e.target.name)
@@ -49,7 +44,7 @@ const Nav = (props) => {
   }
 
   return (
-    <nav className={`w-full z-50 px-2 md:px-8 lg:px-48 flex flex-col gap-4 md:flex-row items-center justify-start py-4 fixed top-0 left-0 ${navOpen && 'h-full px-0'} ${props?.scrollY > 15 ? 'bg-white' : navOpen ? 'bg-white': props?.page === 'home' ? 'bg-transparent' : 'bg-white'} transition-bg duration-500`}>
+    <nav className={`w-full z-50 px-2 md:px-8 lg:px-48 flex flex-col gap-4 md:flex-row items-center justify-start py-2 fixed top-0 left-0 ${navOpen && 'h-full px-0'} ${props?.scrollY > 15 ? 'bg-white' : navOpen ? 'bg-white': props?.page === 'home' ? 'bg-transparent' : 'bg-white'} transition-bg duration-500`}>
         <div className={`flex justify-between w-full md:w-[20%] ${navOpen && 'px-2'}`}>
           <div className='flex gap-2 items-center'>
             <h1 className={`text-2xl font-bold ${props?.scrollY > 15 ? 'text-[#00CCBB]' : navOpen ? 'text-black': props?.page === 'home' ?'text-white':'text-black'}`}>Deliveroo</h1>

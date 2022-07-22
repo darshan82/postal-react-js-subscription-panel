@@ -1,6 +1,6 @@
 import Nav from "../components/nav"
 import background from '../assets/images/deliveryBackground.svg'
-import backgroundMedium from '../assets/images/deliveryBackgroundMedium.svg'
+import backgroundMobile from '../assets/images/deliveryBackgroundMedium.svg'
 import { useContext } from "react"
 import { WindowSizeContext } from '../App';
 const Delivery = () => {
@@ -13,7 +13,7 @@ const Delivery = () => {
                 <p className="text-[#828585] text-center lg:text-start w-[100%]">Give your customers the best possible experience and create long-term growth by offering delivery</p>
                 <button className="w-1/4 mx-auto lg:mx-0 px-[24px] py-[12px] text-white font-semibold bg-yellow-300 rounded">Sign up</button>
             </div>
-            <img src={windowSize.innerWidth > 1023 ? background : backgroundMedium} alt="" className={`object-cover w-[100%] lg:w-[55%] text-end`}/>
+            <img src={windowSize.innerWidth > 1023 ? background : backgroundMobile} alt="" className={`object-cover w-[100%] lg:w-[55%] text-end`}/>
         </section>
         <h1 className="bg-[#FBFBFB] mt-[92px] h-screen">welcome to my world welcome to my world</h1>
         </>)

@@ -1,5 +1,6 @@
 import Nav from "../components/nav";
-import background from "../assets/images/mainBackground.avif";
+import background from "../assets/images/restaurantBackground.avif";
+import backgroundMobile from '../assets/images/restaurantBackgroundMobile.svg'
 import promote from "../assets/images/promote.avif";
 import reachCustomers from "../assets/images/reachCustomers.avif";
 import support from "../assets/images/support.avif";
@@ -17,31 +18,19 @@ import lightning from "../assets/icons/lightning.svg";
 import BusinessCard from "../components/businessCard";
 import SignupBar from "../components/signupBar";
 import SupportCard from "../components/supportCard";
-import Faqs from "../components/faqs";
 import Footer from '../components/footer'
+import {useContext} from 'react'
+import { WindowSizeContext } from "../App";
 
-const FAQS = [
-  {
-    question: "Do I need an FSA rating to join Deliveroo?",
-    answer:
-      "Yes, we need you to provide proof that your restaurant has a minimum standard of food hygiene. We reserve the right to put your application on hold until you can obtain proof of your food hygiene standards. How to find your restaurant's FSA rating.",
-  },
-  {
-    question: "Can I upload my own menu images?",
-    answer:
-      "We recommend using as many high quality images as possible on your Deliveroo menu. That's why we offer a professional photography service as part of some of our packages. You can also upload your own imagery for your menu and restaurant 'shopfront' on Deliveroo. All images are reviewed against our photography guidelines. Find out more about uploading your imagery.",
-  },
-  {
-    question: "Can I use my own delivery riders?",
-    answer:
-      "You can choose to use Deliveroo's world-class logistics network or your own delivery drivers. We extensively train our riders, who can be tracked in real time when they're carrying your orders. Your customers can also see and interact with our riders, meaning fewer undelivered orders and more happy customers.",
-  },
-];
 const Home = () => {
+  const windowSize = useContext(WindowSizeContext)
   const [scrollY, setScrollY] = useState(0);
   const [partners, setPartners] = useState(0);
   const [meals, setMeals] = useState(0)
   const [averageTime, setAverageTime] = useState(0)
+  const [answerAOpen, setAnswerAOpen] = useState(true)
+  const [answerBOpen, setAnswerBOpen] = useState(true)
+  const [answerCOpen, setAnswerCOpen] = useState(true)
 
   function logit() {
     setScrollY(window.pageYOffset);
@@ -95,14 +84,14 @@ const Home = () => {
     <>
       <section
         className="bg-local bg-center bg-no-repeat bg-cover h-80 md:h-screen md:shadow-[inset_0px_50px_50px_0px_rgba(0,0,0,0.6),inset_0px_-200px_300px_0px_rgba(0,0,0,0.9)]"
-        style={{ backgroundImage: `url(${background})` }}
+        style={{ backgroundImage: `url(${windowSize.innerWidth > 767 ? background : backgroundMobile})` }}
       >
-        <div className="relative top-[350px] md:top-[280px] lg:top-[480px] w-[100%] text-center flex flex-wrap flex-col justify-center items-center gap-4 lg:gap-6 xl:gap-8">
-          <h1 className="text-black md:text-white text-4xl md:text-6xl font-bold">
+        <div className="relative top-[330px] md:top-[280px] lg:top-[480px] w-[100%] text-center flex flex-wrap flex-col justify-center items-center gap-4 lg:gap-6 xl:gap-8">
+          <h1 className="text-black md:text-white text-2xl md:text-4xl lg:text-6xl font-bold">
             Become a Deliveroo{" "}
             <span className="text-yellow-300">restaurant</span> partner
           </h1>
-          <p className="text-gray-600 lg:text-white text-xl">
+          <p className="text-gray-600 lg:text-white text-lg md:text-xl">
             Together we can keep your kitchen busier than ever
           </p>
           <button className="text-black text-xl font-semibold bg-yellow-300 rounded py-[12px] px-[24px] min-w-[100px] md:min-w-[200px] lg:min-w-[300px]">
@@ -351,9 +340,54 @@ const Home = () => {
           />
         </div>
       </section>
-
+      
       <section>
-        <Faqs data={FAQS} />
+        <div className="px-2 md:px-8 lg:px-48 py-16 bg-yellow-300">
+          <div className="flex flex-col items-center justify-center w-[65%] mx-auto">
+            <h4 className="text-4xl font-bold text-white mb-8">Frequently asked questions</h4>
+            <details class="list-none w-full cursor-pointer shadow-lg ">
+                <summary className="flex justify-between p-4 bg-white hover:bg-gray-100 border-b border-[#E5E5E5]" onClick={() => setAnswerAOpen(!answerAOpen)}>
+                    <span className="">Do I need an FSA rating to join Deliveroo</span>
+                    <button>
+                        { answerAOpen ? (<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        ) : (<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-up"><polyline points="18 15 12 9 6 15"></polyline></svg>)}
+                    </button>
+                </summary>
+                <div className="flex flex-col gap-2 text-[#707070] bg-white p-4 border-b border-[#E5E5E5]">
+                  <p>Yes, we need you to provide proof that your restaurant has a minimum standard of food hygiene.</p>
+                  <p>We reserve the right to put your application on hold until you can obtain proof of your food hygiene standards.</p>
+                  <p>How to <a href=".">find your restaurant's FSA rating</a>.</p>
+                </div>
+            </details>
+            <details class="list-none w-full cursor-pointer transition-all duration-500 ease-in-out shadow-lg">
+                <summary className="flex justify-between p-4 bg-white hover:bg-gray-100 border-b border-[#E5E5E5]" onClick={() => setAnswerBOpen(!answerBOpen)}>
+                    <span className="">Can I upload my own menu images?</span>
+                    <button>
+                        { answerBOpen ? (<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        ) : (<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-up"><polyline points="18 15 12 9 6 15"></polyline></svg>)}
+                    </button>
+                </summary>
+                <div className="flex flex-col gap-2 text-[#707070] bg-white p-4 border-b border-[#E5E5E5]">
+                  <p>We recommend using as many high quality images as possible on your Deliveroo menu. That's why we offer a professional photography service as part of some of our packages.</p>
+                  <p>You can also upload your own imagery for your menu and restaurant 'shopfront' on Deliveroo. All images are reviewed against our photography guidelines.</p>
+                  <a href=".">Find out more about uploading your imagery.</a>
+                </div>
+            </details>
+            <details class="list-none w-full cursor-pointer transition-all duration-500 ease-in-out shadow-lg">
+                <summary className="flex justify-between p-4 bg-white hover:bg-gray-100 border-b border-[#E5E5E5]" onClick={() => setAnswerCOpen(!answerCOpen)}>
+                    <span className="">Can I use my own delivery riders?</span>
+                    <button>
+                        { answerCOpen ? (<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        ) : (<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-up"><polyline points="18 15 12 9 6 15"></polyline></svg>)}
+                    </button>
+                </summary>
+                <div className="flex flex-col gap-2 text-[#707070] bg-white p-4 border-b border-[#E5E5E5]">
+                  <p>You can choose to use Deliveroo's world-class logistics network or your own delivery drivers.</p>
+                  <p>We extensively train our riders, who can be tracked in real time when they're carrying your orders. Your customers can also see and interact with our riders, meaning fewer undelivered orders and more happy customers.</p>
+                </div>
+            </details>
+          </div>
+        </div>
       </section>
 
       <Footer />

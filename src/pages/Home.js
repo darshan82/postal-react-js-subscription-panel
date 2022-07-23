@@ -87,7 +87,7 @@ const Home = () => {
         style={{ backgroundImage: `url(${windowSize.innerWidth > 767 ? background : backgroundMobile})` }}
       >
         <div className="relative top-[330px] md:top-[280px] lg:top-[480px] w-[100%] text-center flex flex-wrap flex-col justify-center items-center gap-4 lg:gap-6 xl:gap-8">
-          <h1 className="text-black md:text-white text-2xl md:text-4xl lg:text-6xl font-bold">
+          <h1 className="text-black md:text-white text-4xl lg:text-6xl font-bold">
             Become a Deliveroo{" "}
             <span className="text-yellow-300">restaurant</span> partner
           </h1>
@@ -105,8 +105,8 @@ const Home = () => {
       <section className="">
         <img src={blackbanner} alt="banner" className="z-0 invisible lg:visible" />
         <div className="relative w-full top-[200px] md:top-[-180px] md:mb-[-180px] lg:top-[-200px] lg:mb-[-200px] px-2 md:px-8 lg:px-48 z-10">
-          <div className="flex flex-col gap-6 bg-white shadow-lg rounded-md justify-center items-center py-16">
-            <h4 className="text-2xl font-bold">We're here to deliver</h4>
+          <div className="flex flex-col gap-6 bg-white shadow-lg rounded-md justify-center items-center p-[50px]">
+            <h4 className="text-2xl lg:text-3xl font-bold">We're here to deliver</h4>
             <div className="w-full flex flex-wrap justify-evenly">
             <div className="flex flex-col items-center justify-between gap-2">
                   <img
@@ -151,13 +151,13 @@ const Home = () => {
       </section>
 
       <section className="px-2 md:px-8 lg:px-48 text-center mt-80 md:mt-40 lg:mt-8">
-        <h2 className="text-4xl font-bold">How we can help your business</h2>
+        <h2 className="text-start md: text-center text-4xl font-bold">How we can help your business</h2>
         <div className="w-full mt-8 flex flex-wrap justify-between items-center gap-2">
           <BusinessCard
             flexWrap="flex-wrap"
             img={promote}
             title="Promote your business"
-            body="Boost sales by increasing your visibility on the most popular online channels."
+            body={["Boost sales by increasing your visibility on the most popular online channels."]}
             reference="Find out more about marketing"
             index="1"
           />
@@ -165,7 +165,7 @@ const Home = () => {
             flexWrap="flex-wrap-reverse"
             img={reachCustomers}
             title="Reach more customers"
-            body="Attract new customers and keep them coming back for more with the delivery type that works for you."
+            body={["Attract new customers and keep them coming back for more with the delivery type that works for you."]}
             reference="Find out more about our delivery services"
             index="2"
           />
@@ -173,7 +173,7 @@ const Home = () => {
             flexWrap="flex-wrap"
             img={support}
             title="Recieve the support you need"
-            body="Watch your business grow with the support of our Restaurant Hub, built to help you succeed."
+            body={["Watch your business grow with the support of our Restaurant Hub, built to help you succeed."]}
             reference="Find out more about Restaurant Hub"
             index="3"
           />

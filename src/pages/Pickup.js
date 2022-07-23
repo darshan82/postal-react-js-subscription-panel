@@ -25,6 +25,7 @@ export default function Pickup() {
   const [answerAOpen, setAnswerAOpen] = useState(true)
   const [answerBOpen, setAnswerBOpen] = useState(true)
   const [answerCOpen, setAnswerCOpen] = useState(true)
+  const [answerDOpen, setAnswerDOpen] = useState(true)
 
   function logit() {
     setScrollY(window.pageYOffset);
@@ -66,7 +67,7 @@ export default function Pickup() {
           className="z-0 invisible lg:visible"
         />
         <div className="relative w-full top-[230px] md:top-[-180px] md:mb-[-180px] lg:top-[-200px] lg:mb-[-200px] px-2 md:px-8 lg:px-48 z-10">
-          <div className="flex flex-col gap-6 bg-white shadow-lg rounded-md justify-center items-center py-16">
+          <div className="flex flex-col gap-6 bg-white shadow-lg rounded-md justify-center items-center p-[50px]">
             <div className="w-full flex flex-wrap justify-evenly">
               <div className="flex flex-col items-center justify-between lg:w-[32%] gap-2">
                 <img src={map} alt="" style={{ width: "110px" }} />
@@ -104,22 +105,21 @@ export default function Pickup() {
             flexWrap="flex-wrap"
             img={promote}
             title="Cost effective"
-            body="Customers collect their meal direct from you and save on delivery costs, encouraging more frequent orders. When a customer opts for Pickup you save on commission too."
+            body={["Customers collect their meal direct from you and save on delivery costs, encouraging more frequent orders.","When a customer opts for Pickup you save on commission too."]}
             index="1"
           />
           <BusinessCard
             flexWrap="flex-wrap-reverse"
             img={reachCustomers}
             title="All the same kit"
-            body="No additional technology, or investment is needed to enable Pickup, alongside Delivery. For ease and flexibility, you'll use the same device for all orders."
+            body={["No additional technology, or investment is needed to enable Pickup, alongside Delivery.","For ease and flexibility, you'll use the same device for all orders."]}
             index="2"
           />
           <BusinessCard
             flexWrap="flex-wrap"
             img={support}
             title="COVID-safe"
-            body="Just like rider handovers, maintain safe distancing for customer collections with contact-free Pickup.
-            Comply with COVID-19 regulations by reducing interactions."
+            body={["Just like rider handovers, maintain safe distancing for customer collections with contact-free Pickup.","Comply with COVID-19 regulations by reducing interactions."]}
             index="3"
           />
         </div>
@@ -157,43 +157,57 @@ export default function Pickup() {
             <h4 className="text-4xl font-bold text-white mb-8">Frequently asked questions</h4>
             <details class="list-none w-full cursor-pointer shadow-lg ">
                 <summary className="flex justify-between p-4 bg-white hover:bg-gray-100 border-b border-[#E5E5E5]" onClick={() => setAnswerAOpen(!answerAOpen)}>
-                    <span className="">Do I need an FSA rating to join Deliveroo</span>
+                    <span className="">Is Pickup automatically enabled?</span>
                     <button>
                         { answerAOpen ? (<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>
                         ) : (<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-up"><polyline points="18 15 12 9 6 15"></polyline></svg>)}
                     </button>
                 </summary>
                 <div className="flex flex-col gap-2 text-[#707070] bg-white p-4 border-b border-[#E5E5E5]">
-                  <p>Yes, we need you to provide proof that your restaurant has a minimum standard of food hygiene.</p>
-                  <p>We reserve the right to put your application on hold until you can obtain proof of your food hygiene standards.</p>
-                  <p>How to <a href=".">find your restaurant's FSA rating</a>.</p>
+                  <p>No, but you can choose to use Pickup by logging into Restaurant Hub, find out more here.</p>
+                  <p>If you're in an area where Pickup is more popular, we may contact you to suggest you enable this delivery method.</p>
+                  <p>Not working for you? You can easily switch it off in Hub too.</p>
                 </div>
             </details>
             <details class="list-none w-full cursor-pointer transition-all duration-500 ease-in-out shadow-lg">
                 <summary className="flex justify-between p-4 bg-white hover:bg-gray-100 border-b border-[#E5E5E5]" onClick={() => setAnswerBOpen(!answerBOpen)}>
-                    <span className="">Can I upload my own menu images?</span>
+                    <span className="">Will my Delivery menu be used for Pickup?</span>
                     <button>
                         { answerBOpen ? (<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>
                         ) : (<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-up"><polyline points="18 15 12 9 6 15"></polyline></svg>)}
                     </button>
                 </summary>
                 <div className="flex flex-col gap-2 text-[#707070] bg-white p-4 border-b border-[#E5E5E5]">
-                  <p>We recommend using as many high quality images as possible on your Deliveroo menu. That's why we offer a professional photography service as part of some of our packages.</p>
-                  <p>You can also upload your own imagery for your menu and restaurant 'shopfront' on Deliveroo. All images are reviewed against our photography guidelines.</p>
-                  <a href=".">Find out more about uploading your imagery.</a>
+                  <p>Yes, but you can have different menu items for both Delivery and Pickup.</p>
+                  <p>For the same menu item, the prices should be the same for both Delivery and Pickup.</p>
                 </div>
             </details>
             <details class="list-none w-full cursor-pointer transition-all duration-500 ease-in-out shadow-lg">
                 <summary className="flex justify-between p-4 bg-white hover:bg-gray-100 border-b border-[#E5E5E5]" onClick={() => setAnswerCOpen(!answerCOpen)}>
-                    <span className="">Can I use my own delivery riders?</span>
+                    <span className="">Can I run Marketer offers for Pickup?</span>
                     <button>
                         { answerCOpen ? (<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>
                         ) : (<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-up"><polyline points="18 15 12 9 6 15"></polyline></svg>)}
                     </button>
                 </summary>
                 <div className="flex flex-col gap-2 text-[#707070] bg-white p-4 border-b border-[#E5E5E5]">
-                  <p>You can choose to use Deliveroo's world-class logistics network or your own delivery drivers.</p>
-                  <p>We extensively train our riders, who can be tracked in real time when they're carrying your orders. Your customers can also see and interact with our riders, meaning fewer undelivered orders and more happy customers.</p>
+                  <p>Yes, our promotional tool, Marketer can be enabled for Delivery, Pickup and Table Service.</p>
+                  <p>Marketer is a great way to grow your customer base, especially with customers seeking better value meals, by offering menu item or whole menu offers.</p>
+                  <p>Find out more about Marketer</p>
+                  <p>Find out more about Table Service.</p>
+                </div>
+            </details>
+            <details class="list-none w-full cursor-pointer transition-all duration-500 ease-in-out shadow-lg">
+                <summary className="flex justify-between p-4 bg-white hover:bg-gray-100 border-b border-[#E5E5E5]" onClick={() => setAnswerDOpen(!answerDOpen)}>
+                    <span className="">How does Deliveroo deal with complaints for Pickup orders?</span>
+                    <button>
+                        { answerDOpen ? (<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        ) : (<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-up"><polyline points="18 15 12 9 6 15"></polyline></svg>)}
+                    </button>
+                </summary>
+                <div className="flex flex-col gap-2 text-[#707070] bg-white p-4 border-b border-[#E5E5E5]">
+                  <p>If a customer complains in store, their complaint can often be dealt with more quickly by your staff.</p>
+                  <p>If a customer requires a refund for a Pickup order, after they've left your restaurant they can request this in the Deliveroo app.</p>
                 </div>
             </details>
           </div>

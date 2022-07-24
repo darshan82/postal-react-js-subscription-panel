@@ -41,10 +41,10 @@ export default function Footer(){
             </span>
           </div>
           <div className="hidden lg:flex flex-col gap-2">
-            <strong className="mb-2">Want your business on Deliveroo?</strong>
+            <strong className="mb-2">Want your business on 24/7 Postal?</strong>
             <span className="text-[#828585] hover:text-yellow-400 cursor-pointer">
               Send us your information and we’ll reach out to help you become a
-              <br /> Deliveroo partner.
+              <br /> 24/7 Postal partner.
             </span>
             <button className="w-1/2 mt-2 bg-yellow-300 rounded px-5 py-2 border-yellow-300 border-solid border-2 text-lg text-black font-semibold cursor-pointer">
               Become a partner
@@ -52,7 +52,7 @@ export default function Footer(){
           </div>
         </div>
         <div className="mt-2">
-          <p className="text-[#828585]">© 2022 Deliveroo</p>
+          <p className="text-[#828585]">© 2022 24/7 Postal</p>
         </div>
       </footer>
     )

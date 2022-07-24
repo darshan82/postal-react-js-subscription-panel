@@ -109,14 +109,14 @@ export default function Delivery() {
             flexWrap="flex-wrap-reverse"
             img={ridersCard}
             title="'Switch on' riders"
-            body={["We only connect you with nearby Deliveroo riders, so that customers get hot, fresh, speedy deliveries.","You get an exact pick up time so you know when a rider will collect the food. All you need is have it ready for the pick up time."]}
+            body={["We only connect you with nearby 24/7 Postal riders, so that customers get hot, fresh, speedy deliveries.","You get an exact pick up time so you know when a rider will collect the food. All you need is have it ready for the pick up time."]}
             index="2"
           />
           <BusinessCard
             flexWrap="flex-wrap"
             img={safetyCard}
             title="Safety and quality guaranteed"
-            body={["All new Deliveroo riders are given road safety training, free rider insurance and free reflective kit.","We make sure your food reaches customers exactly as it should, with food safety training and free insulated bags for riders."]}
+            body={["All new 24/7 Postal riders are given road safety training, free rider insurance and free reflective kit.","We make sure your food reaches customers exactly as it should, with food safety training and free insulated bags for riders."]}
             index="3"
           />
         </div>
@@ -124,7 +124,7 @@ export default function Delivery() {
 
       <section className="my-10">
         <SignupBar
-          title="Not a Deliveroo partner yet?"
+          title="Not a 24/7 Postal partner yet?"
           btnText="Sign up"
         />
       </section>
@@ -143,7 +143,7 @@ export default function Delivery() {
           <SupportCard
             img={tableService}
             title="Table Service"
-            description="A new, contact free way to order and pay. Your customers can order from their table using the Deliveroo app."
+            description="A new, contact free way to order and pay. Your customers can order from their table using the 24/7 Postal app."
           />
         </div>
       </section>
@@ -161,8 +161,8 @@ export default function Delivery() {
                     </button>
                 </summary>
                 <div className="flex flex-col gap-2 text-[#707070] bg-white p-4 border-b border-[#E5E5E5]">
-                  <p>At Deliveroo we want our partners, riders and customers to have the best possible food delivery experience with us.</p>
-                  <p>Riders are required to act professionally and take due care when providing delivery services. Our Community guidelines set out the behaviour we expect from riders when they are riding with Deliveroo.</p>
+                  <p>At 24/7 Postal we want our partners, riders and customers to have the best possible food delivery experience with us.</p>
+                  <p>Riders are required to act professionally and take due care when providing delivery services. Our Community guidelines set out the behaviour we expect from riders when they are riding with 24/7 Postal.</p>
                   <p>If we are made aware of a rider acting in breach of their supplier agreement, we will investigate and take any appropriate action.</p>
                 </div>
             </details>
@@ -188,13 +188,13 @@ export default function Delivery() {
                     </button>
                 </summary>
                 <div className="flex flex-col gap-2 text-[#707070] bg-white p-4 border-b border-[#E5E5E5]">
-                  <p>Deliveroo provides free rider accident insurance and free rider public liability insurance to all riders (and their substitutes) whilst they are logged on to our app and for one hour afterwards.</p>
+                  <p>24/7 Postal provides free rider accident insurance and free rider public liability insurance to all riders (and their substitutes) whilst they are logged on to our app and for one hour afterwards.</p>
                   <p>Find out more on our insurance partner's website.</p>
                 </div>
             </details>
             <details class="list-none w-full cursor-pointer transition-all duration-500 ease-in-out shadow-lg">
                 <summary className="flex justify-between p-4 bg-white hover:bg-gray-100 border-b border-[#E5E5E5]" onClick={() => setAnswerDOpen(!answerDOpen)}>
-                    <span className="">How does Deliveroo look after rider's welfare?</span>
+                    <span className="">How does 24/7 Postal look after rider's welfare?</span>
                     <button>
                         { answerDOpen ? (<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>
                         ) : (<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-up"><polyline points="18 15 12 9 6 15"></polyline></svg>)}
@@ -202,7 +202,7 @@ export default function Delivery() {
                 </summary>
                 <div className="flex flex-col gap-2 text-[#707070] bg-white p-4 border-b border-[#E5E5E5]">
                   <p>The safety and well being of riders is our priority. We provide free insurance and reflective kit for all riders, and run regular road safety campaigns.</p>
-                  <p>In response to the COVID-19 pandemic, Deliveroo introduced contact-free delivery and pickup. Riders can also request free face masks and hand sanitisers from Deliveroo.</p>
+                  <p>In response to the COVID-19 pandemic, 24/7 Postal introduced contact-free delivery and pickup. Riders can also request free face masks and hand sanitisers from 24/7 Postal.</p>
                   <p>If a rider experiences symptoms of COVID-19, or needs to self-isolate, they can apply for our Rider Support Fund which was established to help riders financially while they can't work.</p>
                   <p>We support, celebrates and reward riders through our rider Perks platform and annual Rider Awards.</p>
                   <p>Riders can also apply for a fully-funded junior degree level scholarship or complete one of 700 free online courses via our skills partner, OpenClassrooms.</p>

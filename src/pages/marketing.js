@@ -62,7 +62,7 @@ const Marketing = () => {
             <BusinessCard
               flexWrap="flex-wrap"
               img={marketing}
-              title="Deliveroo marketing"
+              title="24/7 Postal marketing"
               body={[
                 "We promote you to local customers through the app.",
                 "For no additional cost you can also be featured in regular email and social media advertising, we optimise your visibility on Google too.",
@@ -75,7 +75,7 @@ const Marketing = () => {
               img={marketingCustomers}
               title="Reach new customers"
               body={[
-                "There's no 'typical' Deliveroo customer.",
+                "There's no 'typical' 24/7 Postal customer.",
                 "We're constantly growing our app users, bringing you Delivery orders all day long. Switch on Pickup and Table Service and bring the same customers to your restaurant door.",
               ]}
               index="2"
@@ -202,6 +202,7 @@ const Marketing = () => {
           </div>
           <div className="w-full flex flex-wrap items-center justify-end gap-2 lg:gap-8 my-8">
             <div className="w-[100%] lg:w-[40%] flex flex-col gap-2 text-[#505050]">
+              <img src={athenian} className="w-[90px]" />
               <p>
                 “We’ve been on Marketer since it first launched, and from our
                 very early stages we saw massive increases in traffic. The first
@@ -232,7 +233,7 @@ const Marketing = () => {
         </section>
 
         <div className="my-4">
-          <SignupBar title="Not a Deliveroo parneter yet?" btnText="Sign up" />
+          <SignupBar title="Not a 24/7 Postal parneter yet?" btnText="Sign up" />
         </div>
 
         <section>
@@ -247,7 +248,7 @@ const Marketing = () => {
                   onClick={() => setAnswerAOpen(!answerAOpen)}
                 >
                   <span className="">
-                    What is Deliveroo Plus?
+                    What is 24/7 Postal Plus?
                   </span>
                   <button>
                     {answerAOpen ? (
@@ -285,7 +286,7 @@ const Marketing = () => {
                 </summary>
                 <div className="flex flex-col gap-2 text-[#707070] bg-white p-4 border-b border-[#E5E5E5]">
                   <p>
-                  <b>Deliveroo Plus</b> is our monthly subscription service for customers, giving them free delivery on all orders.
+                  <b>24/7 Postal Plus</b> is our monthly subscription service for customers, giving them free delivery on all orders.
                   </p>
                   <p>
                   Compared to other regular customers, <b>Plus</b > customers typically order twice as often and spend twice as much over the course of one month. This means they’re a great option to target with offers.
@@ -393,7 +394,7 @@ const Marketing = () => {
                   className="flex justify-between p-4 bg-white hover:bg-gray-100 border-b border-[#E5E5E5]"
                   onClick={() => setAnswerDOpen(!answerDOpen)}
                 >
-                  <span className="">What is a Deliveroo marketing offer?</span>
+                  <span className="">What is a 24/7 Postal marketing offer?</span>
                   <button>
                     {answerDOpen ? (
                       <svg

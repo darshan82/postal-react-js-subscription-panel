@@ -1,5 +1,5 @@
 import "./App.css";
-import Home from "./pages/Home";
+import Restaurant from "./pages/Restaurant";
 import Delivery from "./pages/Delivery";
 import Pickup from "./pages/Pickup";
 import Marketing from "./pages/Marketing";
@@ -27,7 +27,7 @@ function App() {
     <WindowSizeContext.Provider value={windowSize}>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Restaurant />} />
           <Route path="/delivery" element={<Delivery />} />
           <Route path="/pickup" element={<Pickup />} />
           <Route path="/marketing" element={<Marketing />} />

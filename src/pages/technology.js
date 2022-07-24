@@ -102,7 +102,7 @@ const Technology = () => {
               title="Your tablet"
               body={[
                 "Check order details, track the status of a rider and view pick up times in a few taps.",
-                "Our dedicated all-in-one tablet and printer helps you manage your Deliveroo orders more easily.",
+                "Our dedicated all-in-one tablet and printer helps you manage your 24/7 Postal orders more easily.",
               ]}
               index="1"
               page="technology"
@@ -112,7 +112,7 @@ const Technology = () => {
               img={algorithm}
               title="Our algorithm"
               body={[
-                "Every order on Deliveroo is powered by our predictive algorithm, ‘Frank’.",
+                "Every order on 24/7 Postal is powered by our predictive algorithm, ‘Frank’.",
                 "Frank works out the most efficient way to deliver orders, based on the location of restaurants, riders and customers.",
               ]}
               index="2"
@@ -134,7 +134,7 @@ const Technology = () => {
               img={pointOfSale}
               title="Point of Sale integration"
               body={[
-                "Connect your Deliveroo menu to your Point of Sale (POS) system and automatically receive orders through your till.",
+                "Connect your 24/7 Postal menu to your Point of Sale (POS) system and automatically receive orders through your till.",
                 "Staff won’t have to manually enter orders into the till and your stock levels can be updated in real time.",
               ]}
               index="2"
@@ -144,16 +144,16 @@ const Technology = () => {
         </section>
 
         <div className="my-4">
-          <SignupBar title="Not a Deliveroo parneter yet?" btnText="Sign up" />
+          <SignupBar title="Not a 24/7 Postal parneter yet?" btnText="Sign up" />
         </div>
 
         <section className="px-2 md:px-8 lg:px-48 py-4 my-8">
           <div className="w-full lg:w-[70%] mx-auto">
             <h2 className="text-3xl font-bold text-center">
-              Getting your Deliveroo orders
+              Getting your 24/7 Postal orders
             </h2>
             <p className="my-8 w-[75%] mx-auto text-[#505050]">
-              Whether you use a Deliveroo tablet or your own device, our
+              Whether you use a 24/7 Postal tablet or your own device, our
               algorithm ‘Frank’ keeps things running smoothly. Using realtime
               info Frank calculates your prep time, so riders arrive at just the
               right time.
@@ -190,7 +190,7 @@ const Technology = () => {
                 <div className="bg-[#450163] p-[30px] w-full flex flex-col items-center">
                   <img src={deliverooDevice} alt="" className="w-[90px]" />
                   <p className="text-white font-bold text-2xl">
-                    Deliveroo device
+                    24/7 Postal device
                   </p>
                 </div>
                 <div className="flex flex-col items-center p-[30px] lg:border-l">
@@ -232,7 +232,7 @@ const Technology = () => {
             <SupportCard
               img={inappMarketing}
               title="In-app marketing"
-              description="Advertise your restaurant on Deliveroo and create offers in a few clicks with our free promotional tool, Marketer."
+              description="Advertise your restaurant on 24/7 Postal and create offers in a few clicks with our free promotional tool, Marketer."
             />
             <SupportCard
               img={technologyPickup}
@@ -254,7 +254,7 @@ const Technology = () => {
                   onClick={() => setAnswerAOpen(!answerAOpen)}
                 >
                   <span className="">
-                    Do I have to use Deliveroo device?
+                    Do I have to use 24/7 Postal device?
                   </span>
                   <button>
                     {answerAOpen ? (
@@ -304,7 +304,7 @@ const Technology = () => {
                   className="flex justify-between p-4 bg-white hover:bg-gray-100 border-b border-[#E5E5E5]"
                   onClick={() => setAnswerBOpen(!answerBOpen)}
                 >
-                  <span className="">How much does a Deliveroo tablet cost?</span>
+                  <span className="">How much does a 24/7 Postal tablet cost?</span>
                   <button>
                     {answerBOpen ? (
                       <svg
@@ -350,7 +350,7 @@ const Technology = () => {
                   className="flex justify-between p-4 bg-white hover:bg-gray-100 border-b border-[#E5E5E5]"
                   onClick={() => setAnswerCOpen(!answerCOpen)}
                 >
-                  <span className="">What if I need help with my Deliveroo tablet?</span>
+                  <span className="">What if I need help with my 24/7 Postal tablet?</span>
                   <button>
                     {answerCOpen ? (
                       <svg
@@ -387,7 +387,7 @@ const Technology = () => {
                 </summary>
                 <div className="flex flex-col gap-2 text-[#707070] bg-white p-4 border-b border-[#E5E5E5]">
                   <p>
-                  Our searchable <b>Help center</b> has detailed instructions for setting up and using your Deliveroo tablet, and troubleshooting guides if you have a problem.
+                  Our searchable <b>Help center</b> has detailed instructions for setting up and using your 24/7 Postal tablet, and troubleshooting guides if you have a problem.
                   </p>
                   <p>We also have a dedicated tablet team to help with maintenance and repairs.</p>
                 </div>
@@ -434,7 +434,7 @@ const Technology = () => {
                 </summary>
                 <div className="flex flex-col gap-2 text-[#707070] bg-white p-4 border-b border-[#E5E5E5]">
                   <p>
-                  Restaurant Hub has all the tools and insights you need as a Deliveroo partner in one place.
+                  Restaurant Hub has all the tools and insights you need as a 24/7 Postal partner in one place.
                   </p>
                   <p>You can access your orders, invoices and also contact the support team by logging in to Hub.</p>
                   <p><b>Learn more about Hub</b></p>
@@ -445,7 +445,7 @@ const Technology = () => {
                   className="flex justify-between p-4 bg-white hover:bg-gray-100 border-b border-[#E5E5E5]"
                   onClick={() => setAnswerEOpen(!answerEOpen)}
                 >
-                  <span className="">How do I connect my Deliveroo menu to POS system?</span>
+                  <span className="">How do I connect my 24/7 Postal menu to POS system?</span>
                   <button>
                     {answerEOpen ? (
                       <svg
@@ -484,7 +484,7 @@ const Technology = () => {
                   <p>
                   Many partners choose to connect with Deliveroo’s API for ease and simplicity.
                   </p>
-                  <p>If your POS system is supported, this means orders can flow directly from Deliveroo into your till once the order has been accepted.</p>
+                  <p>If your POS system is supported, this means orders can flow directly from 24/7 Postal into your till once the order has been accepted.</p>
                   <p><b>Find out more here</b></p>
                 </div>
               </details>
@@ -493,7 +493,7 @@ const Technology = () => {
                   className="flex justify-between p-4 bg-white hover:bg-gray-100 border-b border-[#E5E5E5]"
                   onClick={() => setAnswerFOpen(!answerFOpen)}
                 >
-                  <span className="">How does Deliveroo's algorithm work out prep times?</span>
+                  <span className="">How does 24/7 Postal's algorithm work out prep times?</span>
                   <button>
                     {answerFOpen ? (
                       <svg
@@ -530,9 +530,9 @@ const Technology = () => {
                 </summary>
                 <div className="flex flex-col gap-2 text-[#707070] bg-white p-4 border-b border-[#E5E5E5]">
                   <p>
-                  Prep time is our term for how long it takes restaurants to get an order ready for pickup by a rider. We use prep time to calculate the estimated order duration (EOD) we show to customers on Deliveroo.
+                  Prep time is our term for how long it takes restaurants to get an order ready for pickup by a rider. We use prep time to calculate the estimated order duration (EOD) we show to customers on 24/7 Postal.
                   </p>
-                  <p>When you first set up Deliveroo you have to set your prep time for quiet, moderate and busy periods. We use these numbers as a baseline to train our algorithm.</p>
+                  <p>When you first set up 24/7 Postal you have to set your prep time for quiet, moderate and busy periods. We use these numbers as a baseline to train our algorithm.</p>
                   <p>Once you start delivering orders, we’ll use machine learning to set more accurate prep times. Our algorithm learns from your restaurant’s order information over the last 14 days.</p>
                   <p>Learn more about <b>prep times and our algorithm</b>.</p>
                 </div>

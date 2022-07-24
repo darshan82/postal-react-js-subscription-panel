@@ -48,7 +48,7 @@ const Nav = (props) => {
     <nav className={`w-full z-50 px-2 md:px-8 lg:px-48 flex flex-col gap-4 md:flex-row items-center justify-start py-2 fixed top-0 left-0 ${navOpen && 'h-full px-0'} ${props?.scrollY > 15 ? 'bg-white' : navOpen ? 'bg-white': page === 'home' ? 'bg-transparent' : 'bg-white'} transition-bg duration-500`}>
         <div className={`flex justify-between w-full md:w-[20%] ${navOpen && 'px-2'}`}>
           <div className='flex gap-2 items-center'>
-            <h1 className={`text-2xl font-bold ${props?.scrollY > 15 ? 'text-[#00CCBB]' : navOpen ? 'text-black': page === 'home' ?'text-white':'text-black'}`}>Deliveroo</h1>
+            <h1 className={`text-2xl font-bold ${props?.scrollY > 15 ? 'text-yellow-400' : navOpen ? 'text-black': page === 'home' ?'text-white':'text-black'}`}>24/7 Postal</h1>
             <span className='text-2xl'><GoPlay /></span>
           </div>
           <div className={`md:hidden text-4xl ${navOpen ? 'text-red-400' : 'text-yellow-300'} transition duration-500 ease-in`} onClick={toggleNav}>{navOpen ? <GoX /> : <GoGrabber />}</div>

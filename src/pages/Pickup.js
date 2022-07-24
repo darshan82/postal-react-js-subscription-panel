@@ -141,7 +141,7 @@ export default function Pickup() {
           <SupportCard
             img={tableService}
             title="Table Service"
-            description="Customers order ahead or in-store using the Deliveroo app."
+            description="Customers order ahead or in-store using the 24/7 Postal app."
           />
           <SupportCard
             img={deliverySupport}
@@ -199,7 +199,7 @@ export default function Pickup() {
             </details>
             <details class="list-none w-full cursor-pointer transition-all duration-500 ease-in-out shadow-lg">
                 <summary className="flex justify-between p-4 bg-white hover:bg-gray-100 border-b border-[#E5E5E5]" onClick={() => setAnswerDOpen(!answerDOpen)}>
-                    <span className="">How does Deliveroo deal with complaints for Pickup orders?</span>
+                    <span className="">How does 24/7 Postal deal with complaints for Pickup orders?</span>
                     <button>
                         { answerDOpen ? (<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>
                         ) : (<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-up"><polyline points="18 15 12 9 6 15"></polyline></svg>)}
@@ -207,7 +207,7 @@ export default function Pickup() {
                 </summary>
                 <div className="flex flex-col gap-2 text-[#707070] bg-white p-4 border-b border-[#E5E5E5]">
                   <p>If a customer complains in store, their complaint can often be dealt with more quickly by your staff.</p>
-                  <p>If a customer requires a refund for a Pickup order, after they've left your restaurant they can request this in the Deliveroo app.</p>
+                  <p>If a customer requires a refund for a Pickup order, after they've left your restaurant they can request this in the 24/7 Postal app.</p>
                 </div>
             </details>
           </div>

@@ -200,7 +200,7 @@ const Marketing = () => {
               Trusted by restaurants and takeaways all over the world
             </p>
           </div>
-          <div className="w-full flex flex-wrap items-center justify-end gap-2 lg:gap-8 my-8">
+          <div className="w-full flex flex-wrap-reverse items-center justify-end gap-2 lg:gap-8 my-8">
             <div className="w-[100%] lg:w-[40%] flex flex-col gap-2 text-[#505050]">
               <img src={athenian} className="w-[90px]" />
               <p>
@@ -222,7 +222,7 @@ const Marketing = () => {
               className="rounded-md w-[100%] lg:w-[48%]"
             />
           </div>
-          <div className="flex flex-col lg:flex-row justify-evenly items-center">
+          <div className="flex flex-wrap gap-4 lg:flex-row justify-evenly items-center">
             <img src={athenian} className="w-[90px]" />
             <img src={barburrito} className="w-[90px]" />
             <img src={prairiefire} className="w-[90px]" />

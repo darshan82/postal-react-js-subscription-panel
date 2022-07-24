@@ -170,7 +170,7 @@ const Editions = () => {
               A global network of kitchens, chefs and site managers
             </p>
           </div>
-          <div className="w-full flex flex-wrap items-center justify-end gap-2 lg:gap-8 my-8">
+          <div className="w-full flex flex-wrap-reverse items-center justify-end gap-2 lg:gap-8 my-8">
             <div className="w-[100%] lg:w-[40%] flex flex-col gap-2 text-[#505050]">
               <img src={bleeker} className="w-[90px]" />
               <p>
@@ -188,7 +188,7 @@ const Editions = () => {
               className="rounded-md w-[100%] lg:w-[48%]"
             />
           </div>
-          <div className="flex flex-col lg:flex-row justify-evenly items-center">
+          <div className="flex flex-wrap gap-4 lg:flex-row justify-evenly items-center">
             <img src={rosa} className="w-[90px]" />
             <img src={shakeshack} className="w-[90px]" />
             <img src={pho} className="w-[90px] h-[50px]" />

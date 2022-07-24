@@ -30,7 +30,7 @@ const Marketing = () => {
   const [answerEOpen, setAnswerEOpen] = useState(true);
   return (
     <>
-      <Nav />
+      <Nav page='marketing'/>
       <section className="w-full relative top-[92px] flex flex-col lg:flex-row justify-between gap-3 h-[640px]">
         <div
           className={`${

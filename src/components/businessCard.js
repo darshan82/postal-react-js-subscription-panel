@@ -8,9 +8,7 @@ const BusinessCard = (props) => {
       {index / 2 === 1 ? (
         <>
           <div
-            className={`w-[100%] md:w-[${
-              page === "home" ? 40 : 55
-            }%] flex flex-col items-start gap-2`}
+            className={`w-[100%] ${page === 'home' ? 'md:w-[40%]' : 'md:w-[55%]'} flex flex-col items-start gap-2`}
           >
             <h4 className="text-2xl font-bold text-start">{title}</h4>
             <div className="flex flex-col gap-2">
@@ -32,11 +30,7 @@ const BusinessCard = (props) => {
           <img
             src={img}
             alt={img}
-            className={`w-[100%] md:w-[${page === "home" ? 55 : 40}%] ${
-              page === "home" && "object-cover"
-            } h-[300px] rounded-lg ${
-              page === "home" && "shadow-[2px_2px_5px_2px_rgba(0,0,0,0.2)]"
-            }`}
+            className={`w-[100%] h-[300px] rounded-lg ${page === "home" ? 'object-cover md:w-[55%] shadow-[2px_2px_5px_2px_rgba(0,0,0,0.2)]' : 'md:w-[40%]'}`}
           />
         </>
       ) : (
@@ -44,16 +38,10 @@ const BusinessCard = (props) => {
           <img
             src={img}
             alt={img}
-            className={`w-[100%] md:w-[${page === "home" ? 55 : 40}%] ${
-              page === "home" && "object-cover"
-            } h-[300px] rounded-lg ${
-              page === "home" && "shadow-[2px_2px_5px_2px_rgba(0,0,0,0.2)]"
-            }`}
+            className={`w-[100%] h-[300px] rounded-lg ${page === "home" ? 'object-cover md:w-[55%] shadow-[2px_2px_5px_2px_rgba(0,0,0,0.2)]' : 'md:w-[40%]'}`}
           />
           <div
-            className={`w-[100%] md:w-[${
-              page === "home" ? 40 : 55
-            }%] flex flex-col items-start gap-2`}
+            className={`w-[100%] ${page === 'home' ? 'md:w-[40%]' : 'md:w-[55%]'} flex flex-col items-start gap-2`}
           >
             <h4 className="text-2xl font-bold text-start">{title}</h4>
             <div className="flex flex-col gap-2">

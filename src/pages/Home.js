@@ -151,7 +151,7 @@ const Home = () => {
       </section>
 
       <section className="px-2 md:px-8 lg:px-48 text-center mt-80 md:mt-40 lg:mt-8">
-        <h2 className="text-start md: text-center text-4xl font-bold">How we can help your business</h2>
+        <h2 className="text-start md:text-center text-4xl font-bold">How we can help your business</h2>
         <div className="w-full mt-8 flex flex-wrap justify-between items-center gap-2">
           <BusinessCard
             flexWrap="flex-wrap"
